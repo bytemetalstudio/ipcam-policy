@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPCam Engine - Partage de Caméra</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background: #0b0f19; color: #f8fafc; padding: 24px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: #131b2e; border: 1px solid #1e293b; border-radius: 16px; padding: 28px; max-width: 440px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .icon { font-size: 48px; margin-bottom: 16px; }
+        h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #ffffff; }
+        p { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.5; }
+        .btn { display: block; width: 100%; padding: 14px; background: #2563eb; color: #ffffff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; margin-bottom: 12px; transition: 0.2s; }
+        .btn:hover { background: #1d4ed8; }
+        .btn-sub { background: #1e293b; color: #cbd5e1; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">📹</div>
+        <h1>IPCam Engine</h1>
+        <p>Une caméra a été partagée avec vous. Appuyez sur le bouton ci-dessous pour l'importer directement dans IPCam Engine.</p>
+        <a id="btnOpen" href="#" class="btn">🚀 Ouvrir dans IPCam Engine</a>
+        <a href="https://play.google.com/store/apps/details?id=com.bmstudio.ipcamengine" class="btn btn-sub">Installer depuis Google Play</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const data = params.get('data');
+        if (data) {
+            const appUrl = 'ipcam://camera?data=' + encodeURIComponent(data);
+            document.getElementById('btnOpen').href = appUrl;
+            // Redirection automatique vers l'application
+            window.location.href = appUrl;
+        }
+    </script>
+</body>
+</html>
