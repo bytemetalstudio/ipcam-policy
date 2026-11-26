@@ -11,6 +11,7 @@
         .icon { font-size: 48px; margin-bottom: 16px; }
         h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #ffffff; }
         p { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.5; }
+        p strong { color: #3b82f6; font-weight: 600; }
         .btn { display: block; width: 100%; padding: 14px; background: #2563eb; color: #ffffff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 15px; margin-bottom: 12px; transition: 0.2s; }
         .btn:hover { background: #1d4ed8; }
         .btn-sub { background: #1e293b; color: #cbd5e1; font-size: 13px; }
@@ -19,7 +20,7 @@
 <body>
     <div class="card">
         <div class="icon">📹</div>
-        <h1>IPCam Engine</h1>
+        <h1 id="mainTitle">IPCam Engine</h1>
         <p id="desc">A camera was shared with you. Tap the button below to import it directly into IPCam Engine.</p>
         <a id="btnOpen" href="#" class="btn">🚀 Open in IPCam Engine</a>
         <a id="btnStore" href="https://play.google.com/store/apps/details?id=com.bmstudio.ipcamengine" class="btn btn-sub">Download on Google Play</a>
@@ -31,6 +32,7 @@
                 lang: 'en',
                 title: 'IPCam Engine - Camera Sharing',
                 desc: 'A camera was shared with you. Tap the button below to import it directly into IPCam Engine.',
+                descWithName: 'The camera {name} was shared with you. Tap the button below to import it directly into IPCam Engine.',
                 open: '🚀 Open in IPCam Engine',
                 store: 'Download on Google Play'
             },
@@ -38,6 +40,7 @@
                 lang: 'fr',
                 title: 'IPCam Engine - Partage de Caméra',
                 desc: 'Une caméra a été partagée avec vous. Appuyez sur le bouton ci-dessous pour l\'importer directement dans IPCam Engine.',
+                descWithName: 'La chaîne/caméra {name} a été partagée avec vous. Appuyez sur le bouton ci-dessous pour l\'importer directement dans IPCam Engine.',
                 open: '🚀 Ouvrir dans IPCam Engine',
                 store: 'Télécharger sur Google Play'
             },
@@ -45,6 +48,7 @@
                 lang: 'es',
                 title: 'IPCam Engine - Cámara compartida',
                 desc: 'Se ha compartido una cámara contigo. Toca el botón de abajo para importarla directamente en IPCam Engine.',
+                descWithName: 'La cámara {name} se ha compartido contigo. Toca el botón de abajo para importarla directamente en IPCam Engine.',
                 open: '🚀 Abrir en IPCam Engine',
                 store: 'Descargar en Google Play'
             },
@@ -52,6 +56,7 @@
                 lang: 'pt',
                 title: 'IPCam Engine - Compartilhamento de Câmera',
                 desc: 'Uma câmera foi compartilhada com você. Toque no botão abaixo para importá-la diretamente no IPCam Engine.',
+                descWithName: 'A câmera {name} foi compartilhada com você. Toque no botão abaixo para importá-la diretamente no IPCam Engine.',
                 open: '🚀 Abrir no IPCam Engine',
                 store: 'Baixar no Google Play'
             },
@@ -59,6 +64,7 @@
                 lang: 'de',
                 title: 'IPCam Engine - Kamera-Freigabe',
                 desc: 'Eine Kamera wurde mit Ihnen geteilt. Tippen Sie auf die Schaltfläche unten, um sie direkt in IPCam Engine zu importieren.',
+                descWithName: 'Die Kamera {name} wurde mit Ihnen geteilt. Tippen Sie auf die Schaltfläche unten, um sie direkt in IPCam Engine zu importieren.',
                 open: '🚀 In IPCam Engine öffnen',
                 store: 'Bei Google Play herunterladen'
             },
@@ -66,6 +72,7 @@
                 lang: 'it',
                 title: 'IPCam Engine - Condivisione Telecamera',
                 desc: 'Una telecamera è stata condivisa con te. Tocca il pulsante qui sotto per importarla direttamente in IPCam Engine.',
+                descWithName: 'La telecamera {name} è stata condivisa con te. Tocca il pulsante qui sotto per importarla direttamente in IPCam Engine.',
                 open: '🚀 Apri in IPCam Engine',
                 store: 'Scarica su Google Play'
             },
@@ -73,115 +80,15 @@
                 lang: 'nl',
                 title: 'IPCam Engine - Camera Delen',
                 desc: 'Er is een camera met u gedeeld. Tik op de onderstaande knop om deze direct in IPCam Engine te importeren.',
+                descWithName: 'De camera {name} is met u gedeeld. Tik op de onderstaande knop om deze direct in IPCam Engine te importeren.',
                 open: '🚀 Openen in IPCam Engine',
                 store: 'Downloaden via Google Play'
-            },
-            ru: {
-                lang: 'ru',
-                title: 'IPCam Engine - Доступ к камере',
-                desc: 'С вами поделились камерой. Нажмите кнопку ниже, чтобы импортировать её в IPCam Engine.',
-                open: '🚀 Открыть в IPCam Engine',
-                store: 'Скачать в Google Play'
-            },
-            zh: {
-                lang: 'zh',
-                title: 'IPCam Engine - 摄像头共享',
-                desc: '有人与您共享了一台摄像头。点击下方按钮直接将其导入 IPCam Engine。',
-                open: '🚀 在 IPCam Engine 中打开',
-                store: '在 Google Play 下载'
-            },
-            ja: {
-                lang: 'ja',
-                title: 'IPCam Engine - カメラ共有',
-                desc: 'カメラが共有されました。下のボタンをタップして、IPCam Engine に直接インポートしてください。',
-                open: '🚀 IPCam Engine で開く',
-                store: 'Google Play でダウンロード'
-            },
-            ko: {
-                lang: 'ko',
-                title: 'IPCam Engine - 카메라 공유',
-                desc: '카메라가 공유되었습니다. 아래 버튼을 눌러 IPCam Engine으로 직접 가져오세요.',
-                open: '🚀 IPCam Engine에서 열기',
-                store: 'Google Play에서 다운로드'
-            },
-            hi: {
-                lang: 'hi',
-                title: 'IPCam Engine - कैमरा साझाकरण',
-                desc: 'आपके साथ एक कैमरा साझा किया गया है। इसे सीधे IPCam Engine में आयात करने के लिए नीचे दिए गए बटन पर टैप करें।',
-                open: '🚀 IPCam Engine में खोलें',
-                store: 'Google Play से डाउनलोड करें'
-            },
-            id: {
-                lang: 'id',
-                title: 'IPCam Engine - Berbagi Kamera',
-                desc: 'Sebuah kamera telah dibagikan kepada Anda. Ketuk tombol di bawah untuk mengimpornya langsung ke IPCam Engine.',
-                open: '🚀 Buka di IPCam Engine',
-                store: 'Unduh di Google Play'
-            },
-            tr: {
-                lang: 'tr',
-                title: 'IPCam Engine - Kamera Paylaşımı',
-                desc: 'Sizinle bir kamera paylaşıldı. Kamerayı doğrudan IPCam Engine\'e aktarmak için aşağıdaki düğmeye dokunun.',
-                open: '🚀 IPCam Engine\'de Aç',
-                store: 'Google Play\'den İndir'
-            },
-            pl: {
-                lang: 'pl',
-                title: 'IPCam Engine - Udostępnianie kamery',
-                desc: 'Udostępniono Ci kamerę. Dotknij poniższego przycisku, aby zaimportować ją bezpośrednio do IPCam Engine.',
-                open: '🚀 Otwórz w IPCam Engine',
-                store: 'Pobierz z Google Play'
-            },
-            uk: {
-                lang: 'uk',
-                title: 'IPCam Engine - Спільний доступ до камери',
-                desc: 'Вам надали доступ до камери. Торкніться кнопки нижче, щоб імпортувати її безпосередньо в IPCam Engine.',
-                open: '🚀 Відкрити в IPCam Engine',
-                store: 'Завантажити в Google Play'
-            },
-            vi: {
-                lang: 'vi',
-                title: 'IPCam Engine - Chia sẻ Camera',
-                desc: 'Một camera đã được chia sẻ với bạn. Nhấn vào nút bên dưới để nhập trực tiếp vào IPCam Engine.',
-                open: '🚀 Mở trong IPCam Engine',
-                store: 'Tải xuống trên Google Play'
-            },
-            th: {
-                lang: 'th',
-                title: 'IPCam Engine - การแชร์กล้อง',
-                desc: 'มีผู้แชร์กล้องกับคุณ แตะปุ่มด้านล่างเพื่อนำเข้าสู่ IPCam Engine โดยตรง',
-                open: '🚀 เปิดใน IPCam Engine',
-                store: 'ดาวน์โหลดบน Google Play'
-            },
-            sv: {
-                lang: 'sv',
-                title: 'IPCam Engine - Kameradelning',
-                desc: 'En kamera har delats med dig. Tryck på knappen nedan för att importera den direkt till IPCam Engine.',
-                open: '🚀 Öppna i IPCam Engine',
-                store: 'Hämta på Google Play'
-            },
-            cs: {
-                lang: 'cs',
-                title: 'IPCam Engine - Sdílení kamery',
-                desc: 'Byla s vámi sdílena kamera. Klepnutím na tlačítko níže ji importujte přímo do IPCam Engine.',
-                open: '🚀 Otevřít v IPCam Engine',
-                store: 'Stáhnout na Google Play'
-            },
-            el: {
-                lang: 'el',
-                title: 'IPCam Engine - Κοινή χρήση κάμερας',
-                desc: 'Μια κάμερα κοινοποιήθηκε μαζί σας. Πατήστε το παρακάτω κουμπί για να την εισαγάγετε απευθείας στο IPCam Engine.',
-                open: '🚀 Άνοιγμα στο IPCam Engine',
-                store: 'Λήψη στο Google Play'
-            },
-            ro: {
-                lang: 'ro',
-                title: 'IPCam Engine - Partajare cameră',
-                desc: 'O cameră a fost partajată cu tine. Atinge butonul de mai jos pentru a o importa direct în IPCam Engine.',
-                open: '🚀 Deschide în IPCam Engine',
-                store: 'Descărcați de pe Google Play'
             }
         };
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
 
         // Détection de la langue du système / navigateur (fallback anglais 'en')
         const rawLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en';
@@ -194,11 +101,23 @@
         document.getElementById('btnOpen').textContent = t.open;
         document.getElementById('btnStore').textContent = t.store;
 
-        // Gestion du deep link et de l'import
+        // Gestion du paramètre de nom et du deep link
         const params = new URLSearchParams(window.location.search);
         const data = params.get('data');
+        const cameraName = params.get('name');
+
+        if (cameraName) {
+            const cleanName = cameraName.trim();
+            if (cleanName) {
+                document.getElementById('mainTitle').textContent = cleanName;
+                if (t.descWithName) {
+                    document.getElementById('desc').innerHTML = t.descWithName.replace('{name}', `<strong>${escapeHtml(cleanName)}</strong>`);
+                }
+            }
+        }
+
         if (data) {
-            const appUrl = 'ipcam://camera?data=' + encodeURIComponent(data);
+            const appUrl = 'ipcam://camera?data=' + encodeURIComponent(data) + (cameraName ? '&name=' + encodeURIComponent(cameraName) : '');
             const btnOpen = document.getElementById('btnOpen');
             btnOpen.href = appUrl;
             // Tentative de redirection automatique
